@@ -25,6 +25,9 @@ public abstract class Content {
     static {
         REGISTERED_CONTENT_TYPES = new LinkedList<>();
         REGISTERED_CONTENT_TYPES.add(ForgeMod.class);
+        REGISTERED_CONTENT_TYPES.add(ResourcePack.class);
+        REGISTERED_CONTENT_TYPES.add(CustomMap.class);
+        REGISTERED_CONTENT_TYPES.add(ContentCollection.class);
     }
     
     public static Content detectContentType(File src) throws UnsupportedContentTypeException {
