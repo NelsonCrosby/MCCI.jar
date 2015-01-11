@@ -16,9 +16,10 @@ public class Profile {
      *  
      * @param name The name of the profile
      */
-    public Profile(String name) {
+    public Profile(String name, File gameDir) {
         this.profileInfo = new JSONObject();
         setName(name);
+        setGameDir(gameDir);
     }
 
     /**

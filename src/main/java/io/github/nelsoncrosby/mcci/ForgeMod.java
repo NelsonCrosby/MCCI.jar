@@ -11,6 +11,17 @@ import java.util.zip.ZipFile;
  */
 public class ForgeMod extends Content {
     /**
+     * Provide the no-args constructor privately
+     * <p/>
+     * Reflection in {@link #detectContentType} requires a default constructor
+     * of some kind, but we don't want others trying to instantiate this class
+     * without passing a {@link #source}. Must be linked to by all
+     * subclasses.
+     */
+    ForgeMod() {
+    }
+
+    /**
      * Construct an object from a {@link #source}.
      *
      * @param source The {@link java.io.File} to use in {@link #source}

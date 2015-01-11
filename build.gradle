@@ -13,6 +13,6 @@ repositories {
 
 dependencies {
     compile 'io.github.nelsoncrosby:NCUtils:0.1.2'
-    compile 'org.json:json:20141113'
+    compile 'org.json:json:20140107'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

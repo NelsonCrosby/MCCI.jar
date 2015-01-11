@@ -54,9 +54,10 @@ public abstract class Content {
      * 
      * Reflection in {@link #detectContentType} requires a default constructor
      *  of some kind, but we don't want others trying to instantiate this class
-     *  without passing a {@link #source}.  
+     *  without passing a {@link #source}. Must be linked to by all
+     *  subclasses.
      */
-    private Content() {}
+    protected Content() {}
 
     /**
      * Construct an object from a {@link #source}.
@@ -100,6 +101,7 @@ public abstract class Content {
         }
         Path sourcePath = source.toPath();
         Path destPath = dest.toPath();
+        dest.getParentFile().mkdirs();
         try {
             Files.createLink(destPath, sourcePath);
         } catch (UnsupportedOperationException e) {

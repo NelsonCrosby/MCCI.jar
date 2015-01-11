@@ -6,10 +6,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Configuration of the Minecraft Launcher
@@ -77,7 +74,8 @@ public class LauncherConfig {
 
         JSONObject profilesJson = configInfo.getJSONObject("profiles");
         this.profiles = new TreeSet<>(PROFILES_SORTER);
-        for (String key : profilesJson.keySet()) {
+        for (Object keyObj : profilesJson.keySet()) {
+            String key = (String) keyObj;
             profiles.add(new Profile(profilesJson.getJSONObject(key)));
         }
     }
@@ -90,7 +88,7 @@ public class LauncherConfig {
      *  
      * @return The sorted iterable of profiles
      */
-    public Iterable<Profile> getProfiles() {
+    public SortedSet<Profile> getProfiles() {
         return profiles;
     }
 
