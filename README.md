@@ -9,3 +9,7 @@ Started with [MCCI.py], a Python script that implements the basic behaviour.
  of Python doesn't really solve our problem.
 
 [MCCI.py]: https://gist.github.com/NelsonCrosby/f375230e36ed467e6ce1
+
+I'm real sorry that the documentation/commenting is crap, but I just wanted to
+ boot this one out the door finally. I'll look back into it at some point, I
+ promise.

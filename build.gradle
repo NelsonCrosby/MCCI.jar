@@ -1,4 +1,13 @@
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'eu.appsatori:gradle-fatjar-plugin:0.3'
+    }
+}
+
+
 apply plugin: 'java'
+apply plugin: 'eu.appsatori.fatjar'
 
 sourceCompatibility = 1.7
 version = '1.0'
@@ -15,4 +24,12 @@ dependencies {
     compile 'io.github.nelsoncrosby:NCUtils:0.1.2'
     compile 'org.json:json:20140107'
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+fatJar {
+    classifier = 'dist'
+
+    manifest {
+        attributes 'Main-Class': 'io.github.nelsoncrosby.mcci.MCCI'
+    }
 }
